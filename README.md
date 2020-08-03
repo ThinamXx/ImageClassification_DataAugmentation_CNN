@@ -12,7 +12,22 @@
 One important note for anyone who has never used Fastai API before is to go through [Fastai Documentation](https://docs.fast.ai/). And if you are using Fastai in Jupyter Notebook then you can use doc(function_name) to get the documentation instantly.
 
 **Dataset**
-- Fastai has its own [Dataset](https://docs.fast.ai/datasets.html).I have used Fastai's PETS Dataset using the following lines of codes:
+- Fastai has its own [Dataset](https://docs.fast.ai/datasets.html).I have used [Fastai PETS Dataset](https://course.fast.ai/datasets) using the following lines of codes:
+
 ```javascript
-untar_data(URLs.PETS)/'images'
+untar_data(URLs.PETS)
 ```
+
+**Data Augmentation with Fastai**
+- Data augmentation is a strategy that enables practitioners to significantly increase the diversity of data available for training models, without actually collecting new data. Data augmentation techniques such as cropping, padding, and horizontal flipping are commonly used to train large neural networks.
+
+```javascript
+get_transforms(max_rotate=20, max_zoom=1.3, max_lighting=0.4, max_warp=0.4,
+                      p_affine=1., p_lighting=1.)
+```                     
+**Convolutional Neural Network with Fastai**
+
+```javascript
+cnn_learner(data, models.resnet34, metrics=error_rate, bn_final=True)
+```
+              
